@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "title": "Opportunity",
+  "title": "Opportunity for DB",
   "description": "Information about the opportunity",
   "type": "object",
   "properties": {
@@ -30,7 +30,7 @@
       "type": "string"
     },
     "logo": {
-      "description": "Path to a logo image file",
+      "description": "Link to a logo image file",
       "type": "string"
     },
 
@@ -48,7 +48,7 @@
         "type": "string"
       }
     },
-    "target": {
+    "target_audience": {
       "description": "Who is the opportunity program intended for (medical professionals, IT specialists, etc.)",
       "type": "array",
       "items": {
@@ -63,15 +63,23 @@
       }
     },
 
+    "country": {
+      "description": "The country where the opportunity is realized",
+      "type": "string"
+    },
+    "city": {
+      "description": "The city where the opportunity is realized",
+      "type": "string"
+    },
     "place": {
-      "description": "List of locations for implementing the opportunity (usually a city)",
+      "description": "A list of specific places where the opportunity is realized",
       "type": "array",
       "items": {
         "type": "string"
       }
     },
-    "period_of_opportunity": {
-      "description": "Period of opportunity",
+    "opportunity_timespan": {
+      "description": "Timespan of opportunity",
       "type": "string"
     },
 
@@ -85,7 +93,7 @@
             "description": "The name of this stage of selection",
             "type": "string"
           },
-          "period": {
+          "timespan": {
             "description": "The period of this stage of selection",
             "type": "string"
           },
@@ -94,8 +102,7 @@
             "type": "array",
             "items": {
               "type": "string"
-            },
-            "minItems": 1
+            }
           }
         },
         "required": ["name", "period", "objectives"]
@@ -111,7 +118,7 @@
       "type": "string"
     },
 
-    "additional": {
+    "additional_sections": {
       "description": "Additional subheadings that describe the opportunity and do not fit into the other points",
       "type": "array",
       "items": {
@@ -121,12 +128,12 @@
             "description": "Title of subheading",
             "type": "string"
           },
-          "description": {
-            "description": "Content of subheading",
+          "content": {
+            "description": "Content of subheading in markdown format",
             "type": "string"
           }
         },
-        "required": ["title", "description"]
+        "required": ["title", "content"]
       }
     },
 
