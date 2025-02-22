@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "title": "Opportunity for DB",
+  "title": "Opportunity",
   "description": "Information about the opportunity",
   "type": "object",
   "properties": {
@@ -168,35 +168,85 @@
             "type": "string"
           },
 
-          "max_len": {
-            "description": "Field is valid if type is string. Maximum string length",
-            "type": "number"
-          },
-          "min": {
-            "description": "Field is valid if type is number. Minimum value of a number",
-            "type": "number"
-          },
-          "max": {
-            "description": "Field is valid if type is number. Maximum value of a number",
-            "type": "number"
-          },
-          "choices": {
-            "description": "Field is valid if type is choice. List to choose from",
-            "type": "list",
-            "items": {
-              "type": "string"
-            }
-          },
-          "max_size_byte": {
-            "description": "Field is valid if type is file. Maximum file size in bytes.",
-            "type": "number"
-          },
-          "pattern": {
-            "description": "Field is valid if type is regex. Pattern of a regex",
-            "type": "string"
+          "parameters": {
+            "description": "Parameters for a specific type of field",
+            "anyOf": [
+              {
+                "description": "Parameters for string field type",
+                "type": "object",
+                "properties": {
+                  "max_len": {
+                    "description": "Maximum string length",
+                    "type": "number"
+                  }
+                }
+              },
+              {
+                "description": "Parameters for email field type",
+                "type": "object",
+                "properties": {
+                  "max_len": {
+                    "description": "Maximum string length",
+                    "type": "number"
+                  }
+                }
+              },
+              {
+                "description": "Parameters for number field type",
+                "type": "object",
+                "properties": {
+                  "min": {
+                    "description": "Minimum value of a number",
+                    "type": "number"
+                  },
+                  "max": {
+                    "description": "Maximum value of a number",
+                    "type": "number"
+                  }
+                }
+              },
+              {
+                "description": "Parameters for choice field type",
+                "type": "object",
+                "properties": {
+                  "choices": {
+                    "description": "List to choose from",
+                    "type": "list",
+                    "items": {
+                      "type": "string"
+                    }
+                  }
+                }
+              },
+              {
+                "description": "Parameters for file field type",
+                "type": "object",
+                "properties": {
+                  "max_size_byte": {
+                    "description": "Maximum file size in bytes.",
+                    "type": "number"
+                  }
+                }
+              },
+              {
+                "description": "Parameters for tel field type",
+                "type": "object",
+                "properties": {}
+              },
+              {
+                "description": "Parameters for regex field type",
+                "type": "object",
+                "properties": {
+                  "pattern": {
+                    "description": "Pattern of a regex",
+                    "type": "string"
+                  }
+                }
+              }
+            ]
           }
         },
-        "required": ["name", "type", "required", "label"]
+        "required": ["name", "type", "required", "label", "parameters"]
       }
     }
   },
