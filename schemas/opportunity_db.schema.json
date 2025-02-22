@@ -1,0 +1,197 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Opportunity",
+  "description": "Information about the opportunity",
+  "type": "object",
+  "properties": {
+    "link": {
+      "description": "Link to the main page of the opportunity",
+      "type": "string"
+    },
+    "form_link": {
+      "description": "Link to the form page of the opportunity",
+      "type": "string"
+    },
+
+    "name": {
+      "description": "Opportunity Title",
+      "type": "string"
+    },
+    "short_description": {
+      "description": "The shortest possible description of the opportunity for placement on the general page with all other opportunities",
+      "type": "string"
+    },
+    "description": {
+      "description": "Long and detailed description of the opportunity",
+      "type": "string"
+    },
+    "provider": {
+      "description": "Name of the opportunity program organizer",
+      "type": "string"
+    },
+    "logo": {
+      "description": "Path to a logo image file",
+      "type": "string"
+    },
+
+    "requirements": {
+      "description": "Requirements for the applicant",
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "advantages": {
+      "description": "Benefits of an opportunity (what experience you can gain, who you can meet, etc.)",
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "target": {
+      "description": "Who is the opportunity program intended for (medical professionals, IT specialists, etc.)",
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "discipline": {
+      "description": "List of professional disciplines related to the opportunity",
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+
+    "place": {
+      "description": "List of locations for implementing the opportunity (usually a city)",
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "period_of_opportunity": {
+      "description": "Period of opportunity",
+      "type": "string"
+    },
+
+    "selection_stages": {
+      "description": "Stages of selection for the opportunity program (if any)",
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "description": "The name of this stage of selection",
+            "type": "string"
+          },
+          "period": {
+            "description": "The period of this stage of selection",
+            "type": "string"
+          },
+          "objectives": {
+            "description": "List of all tasks for this stage of selection",
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "minItems": 1
+          }
+        },
+        "required": ["name", "period", "objectives"]
+      }
+    },
+
+    "allowance": {
+      "description": "Salary/allowance received on the opportunity",
+      "type": "string"
+    },
+    "expenses": {
+      "description": "Possible costs during the opportunity",
+      "type": "string"
+    },
+
+    "additional": {
+      "description": "Additional subheadings that describe the opportunity and do not fit into the other points",
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "title": {
+            "description": "Title of subheading",
+            "type": "string"
+          },
+          "description": {
+            "description": "Content of subheading",
+            "type": "string"
+          }
+        },
+        "required": ["title", "description"]
+      }
+    },
+
+    "tags": {
+      "description": "List of tags of the opportunity",
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+
+    "form": {
+      "description": "Information about the opportunity application form and its fields",
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "description": "The name of the field from the HTML \"name\" attribute.",
+            "type": "string"
+          },
+          "type": {
+            "description": "Field type",
+            "enum": ["string", "email", "number", "choice", "file", "tel", "regex"]
+          },
+          "required": {
+            "description": "Flag indicating whether the field is required to be filled in",
+            "type": "boolean"
+          },
+          "label": {
+            "description": "The field label displayed on the site",
+            "type": "string"
+          },
+
+          "max_len": {
+            "description": "Field is valid if type is string. Maximum string length",
+            "type": "number"
+          },
+          "min": {
+            "description": "Field is valid if type is number. Minimum value of a number",
+            "type": "number"
+          },
+          "max": {
+            "description": "Field is valid if type is number. Maximum value of a number",
+            "type": "number"
+          },
+          "choices": {
+            "description": "Field is valid if type is choice. List to choose from",
+            "type": "list",
+            "items": {
+              "type": "string"
+            }
+          },
+          "max_size_byte": {
+            "description": "Field is valid if type is file. Maximum file size in bytes.",
+            "type": "number"
+          },
+          "pattern": {
+            "description": "Field is valid if type is regex. Pattern of a regex",
+            "type": "string"
+          }
+        },
+        "required": ["name", "type", "required", "label"]
+      }
+    }
+  },
+  "required": ["link", "name", "short_description", "description", "provider"]
+}
