@@ -71,7 +71,7 @@
       "description": "The city where the opportunity is realized",
       "type": "string"
     },
-    "place": {
+    "places": {
       "description": "A list of specific places where the opportunity is realized",
       "type": "array",
       "items": {
@@ -222,7 +222,7 @@
                 "description": "Parameters for file field type",
                 "type": "object",
                 "properties": {
-                  "max_size_byte": {
+                  "max_size": {
                     "description": "Maximum file size in bytes.",
                     "type": "number"
                   }
