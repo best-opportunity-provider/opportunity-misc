@@ -1,0 +1,21 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "properties": {
+    "country": {
+      "description": "The country where the opportunity is realized",
+      "type": "string"
+    },
+    "city": {
+      "description": "The city where the opportunity is realized",
+      "type": "string"
+    },
+    "places": {
+      "description": "A list of specific places where the opportunity is realized",
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "properties": {
+    "additional_sections": {
+      "description": "Additional subheadings that describe the opportunity and do not fit into the other points",
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "title": {
+            "description": "Title of subheading",
+            "type": "string"
+          },
+          "content": {
+            "description": "Content of subheading in markdown format",
+            "type": "string"
+          }
+        },
+        "required": ["title", "content"]
+      }
+    }
+  }
+}

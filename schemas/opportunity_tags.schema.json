@@ -1,0 +1,13 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "properties": {
+    "tags": {
+      "description": "List of tags of the opportunity",
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  }
+}
