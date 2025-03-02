@@ -4,7 +4,7 @@
     "items": {
         "description": "Keyword/tag related to the opportunity",
         "type": "string",
-        "oneOf": [{ "enum": ["Job", "Internship", "Frontend", "Backend"] }, {}]
+        "anyOf": [{ "enum": ["Job", "Internship", "Frontend", "Backend"] }, {}]
     },
     "examples": [
         ["Job", "Full-time", "FinTech", "Backend", "C++"],
