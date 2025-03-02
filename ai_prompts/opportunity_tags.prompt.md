@@ -11,5 +11,5 @@ opportunity_tags.schema.json
 Вот ссылка на сайт программы:
 
 ```
-Link
+Text
 ```

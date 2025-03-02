@@ -11,5 +11,5 @@ opportunity_main.schema.json
 Вот ссылка на сайт программы:
 
 ```
-Link
+Text
 ```

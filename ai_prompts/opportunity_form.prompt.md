@@ -11,5 +11,5 @@ opportunity_form.schema.json
 Вот ссылка на сайт программы:
 
 ```
-Link
+Text
 ```

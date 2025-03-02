@@ -3,9 +3,10 @@
   "type": "object",
   "properties": {
     "form": {
-      "description": "Information about the opportunity application form and its fields",
-      "type": "array",
-      "items": {
+      "type": "object",
+      "properties": {},
+      "additionalProperties": {
+        "description": "Information about the opportunity field",
         "type": "object",
         "properties": {
           "name": {
