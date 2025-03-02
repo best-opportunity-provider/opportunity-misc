@@ -1,0 +1,33 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Opportunity",
+  "description": "Information about the opportunity",
+  "type": "object",
+  "properties": {
+    "selection_stages": {
+      "description": "Stages of selection for the opportunity program (if any)",
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "description": "The name of this stage of selection",
+            "type": "string"
+          },
+          "timespan": {
+            "description": "The period of this stage of selection",
+            "type": "string"
+          },
+          "objectives": {
+            "description": "List of all tasks for this stage of selection",
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        },
+        "required": ["name", "period", "objectives"]
+      }
+    }
+  }
+}
