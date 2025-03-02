@@ -1,13 +1,13 @@
 {
-  "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "type": "object",
-  "properties": {
-    "tags": {
-      "description": "List of tags of the opportunity",
-      "type": "array",
-      "items": {
-        "type": "string"
-      }
-    }
-  }
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "type": "array",
+    "items": {
+        "description": "Keyword/tag related to the opportunity",
+        "type": "string",
+        "oneOf": [{ "enum": ["Job", "Internship", "Frontend", "Backend"] }, {}]
+    },
+    "examples": [
+        ["Job", "Full-time", "FinTech", "Backend", "C++"],
+        ["Internship", "Frontend", "JavaScript"]
+    ]
 }
