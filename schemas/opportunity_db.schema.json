@@ -55,27 +55,31 @@
         "type": "string"
       }
     },
-    "discipline": {
-      "description": "List of professional disciplines related to the opportunity",
-      "type": "array",
-      "items": {
-        "type": "string"
-      }
+    "industry": {
+      "description": "A professional discipline related to the opportunity",
+      "type": "string"
     },
 
-    "country": {
-      "description": "The country where the opportunity is realized",
-      "type": "string"
-    },
-    "city": {
-      "description": "The city where the opportunity is realized",
-      "type": "string"
-    },
     "places": {
-      "description": "A list of specific places where the opportunity is realized",
+      "description": "A list of places where the opportunity is realized",
       "type": "array",
       "items": {
-        "type": "string"
+        "type": "object",
+        "properties": {
+          "name": {
+            "description": "A name of place where the opportunity is realized",
+            "type": "string"
+          },
+          "city": {
+            "description": "A name of city where the opportunity is realized",
+            "type": "string"
+          },
+          "country": {
+            "description": "A name of country where the opportunity is realized",
+            "type": "string"
+          }
+        },
+        "required": ["name"]
       }
     },
     "opportunity_timespan": {
@@ -155,11 +159,7 @@
             "description": "The name of the field from the HTML \"name\" attribute.",
             "type": "string"
           },
-          "type": {
-            "description": "Field type",
-            "enum": ["string", "email", "number", "choice", "file", "tel", "regex"]
-          },
-          "required": {
+          "is_required": {
             "description": "Flag indicating whether the field is required to be filled in",
             "type": "boolean"
           },
@@ -175,6 +175,9 @@
                 "description": "Parameters for string field type",
                 "type": "object",
                 "properties": {
+                  "type": {
+                    "const": "string"
+                  },
                   "max_len": {
                     "description": "Maximum string length",
                     "type": "number"
@@ -185,6 +188,9 @@
                 "description": "Parameters for email field type",
                 "type": "object",
                 "properties": {
+                  "type": {
+                    "const": "email"
+                  },
                   "max_len": {
                     "description": "Maximum string length",
                     "type": "number"
@@ -195,6 +201,9 @@
                 "description": "Parameters for number field type",
                 "type": "object",
                 "properties": {
+                  "type": {
+                    "const": "number"
+                  },
                   "min": {
                     "description": "Minimum value of a number",
                     "type": "number"
@@ -209,9 +218,12 @@
                 "description": "Parameters for choice field type",
                 "type": "object",
                 "properties": {
+                  "type": {
+                    "const": "choice"
+                  },
                   "choices": {
                     "description": "List to choose from",
-                    "type": "list",
+                    "type": "array",
                     "items": {
                       "type": "string"
                     }
@@ -222,6 +234,9 @@
                 "description": "Parameters for file field type",
                 "type": "object",
                 "properties": {
+                  "type": {
+                    "const": "file"
+                  },
                   "max_size": {
                     "description": "Maximum file size in bytes.",
                     "type": "number"
@@ -231,15 +246,47 @@
               {
                 "description": "Parameters for tel field type",
                 "type": "object",
-                "properties": {}
+                "properties": {
+                  "type": {
+                    "const": "tel"
+                  }
+                }
               },
               {
                 "description": "Parameters for regex field type",
                 "type": "object",
                 "properties": {
+                  "type": {
+                    "const": "regex"
+                  },
                   "pattern": {
                     "description": "Pattern of a regex",
                     "type": "string"
+                  }
+                }
+              },
+              {
+                "description": "Parameters for date field type",
+                "type": "object",
+                "properties": {
+                  "type": {
+                    "const": "date"
+                  }
+                }
+              },
+              {
+                "description": "Parameters for checkbox field type",
+                "type": "object",
+                "properties": {
+                  "type": {
+                    "const": "checkbox"
+                  },
+                  "options": {
+                    "description": "List to choose from",
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
                   }
                 }
               }

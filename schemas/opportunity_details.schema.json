@@ -23,12 +23,9 @@
         "type": "string"
       }
     },
-    "discipline": {
-      "description": "List of professional disciplines related to the opportunity",
-      "type": "array",
-      "items": {
-        "type": "string"
-      }
+    "industry": {
+      "description": "A professional discipline related to the opportunity",
+      "type": "string"
     },
     "allowance": {
       "description": "Salary/allowance received on the opportunity",
