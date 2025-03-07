@@ -25,7 +25,7 @@
     "type": "object",
     "properties": {
         "standard_tags": {
-            "description": "List of standard (pre-defined) tags relevant to opportunity",
+            "description": "List of standard (pre-defined) tags relevant to opportunity, only relevant tags should appear in list",
             "type": "array",
             "items": {
                 "type": "object",
@@ -37,7 +37,7 @@
                             "Internship",
                             "Full-time",
                             "Part-time",
-                            "UI/UX",
+                            "User interfaces & experience",
                             "Design"
                         ]
                     },
@@ -48,7 +48,7 @@
             }
         },
         "custom_tags": {
-            "description": "List of custom (non-standard) tags relevant to opportunity",
+            "description": "List of custom (non-standard) tags relevant to opportunity, should not duplicate standard tags",
             "type": "array",
             "items": {
                 "type": "object",
@@ -62,9 +62,10 @@
         }
     },
     "required": ["standard_tags", "custom_tags"],
+    "additionalProperties": false,
     "$defs": {
         "confidence": {
-            "description": "Probability of tag being actually relevant to opportunity",
+            "description": "Probability of tag being actually relevant to opportunity, must be a number in range (0, 1]",
             "type": "number",
             "exclusiveMinimum": 0.0,
             "maximum": 1.0

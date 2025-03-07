@@ -1,4 +1,5 @@
 {
+    "opportunity": "https://yandex.ru/jobs/vacancies/stazhyor-v-komandu-promishlennogo-dizayna-umnih-ustroystv-s-alisoy-30267",
     "output": {
         "standard_tags": [
             { "name": "Internship", "confidence": 1.0 },

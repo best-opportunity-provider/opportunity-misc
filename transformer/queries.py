@@ -31,8 +31,8 @@ async def query_opportunity_tags(client: AsyncOpenAI, opportunity_link: str, opp
             {'role': 'system', 'content': QUERY_MESSAGES['tags.system']},
             {'role': 'user', 'content': opportunity_page},
         ],
-        temperature=0.5,
-        top_p=0.4,
+        temperature=0.2,
+        # top_p=0.4,
         stream=False,
         extra_body={'nvext': {'guided_json': SCHEMAS['tags']}},
     )
