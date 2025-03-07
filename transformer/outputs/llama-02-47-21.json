@@ -1,0 +1,16 @@
+{
+    "output": {
+        "standard_tags": [
+            { "name": "Internship", "confidence": 1.0 },
+            { "name": "Design", "confidence": 0.98 },
+            { "name": "Full-time", "confidence": 0.96 }
+        ],
+        "custom_tags": [
+            { "name": "Industrial Design", "confidence": 0.99 },
+            { "name": "UX/UI", "confidence": 0.95 },
+            { "name": "Product Design", "confidence": 0.92 }
+        ]
+    },
+    "comments": "Added `Design` and `UI/UX` to standard tags. Output is pretty reasonable, but inability to relate `UI/UX` to `UX/UI` sinals, that tag names should be more descriptive. Changing `0` to `0.0` in `exclusiveMinimum` solved problem with zero confidence tags.",
+    "model": "meta/llama-3.3-70b-instruct"
+}
