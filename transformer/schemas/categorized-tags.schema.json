@@ -1,0 +1,176 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "title": "Opportunity tags",
+    "description": "Object with tags relevant to a job, internship or some other opportunity",
+    "type": "object",
+    "properties": {
+        "category": {
+            "description": "An object with information about opportunity category",
+            "type": "object",
+            "properties": {
+                "name": {
+                    "type": "string",
+                    "enum": ["Internship", "Job", "Other"]
+                },
+                "confidence": { "$ref": "#/$defs/confidence" }
+            },
+            "required": ["name", "confidence"],
+            "additionalProperties": false
+        },
+        "format_tags": {
+            "description": "An object with information about opportunity format",
+            "type": "object",
+            "properties": {
+                "standard": {
+                    "description": "List of standard opportuntiy format tags, only tags that are relevant to opportunity should appear in the list",
+                    "type": "array",
+                    "items": {
+                        "description": "One of pre-defined opportunity format tags",
+                        "type": "object",
+                        "properties": {
+                            "name": {
+                                "type": "string",
+                                "enum": [
+                                    "Full-time",
+                                    "Part-time",
+                                    "In office",
+                                    "Remote",
+                                    "Hybrid"
+                                ]
+                            },
+                            "confidence": { "$ref": "#/$defs/confidence" }
+                        },
+                        "required": ["name", "confidence"],
+                        "additionalProperties": false
+                    }
+                },
+                "custom": {
+                    "description": "List of custom opportunity format tags, only tags that are relevant to opportunity should appear in the list",
+                    "type": "array",
+                    "items": {
+                        "description": "One of custom opportunity format tags, needed only if there is not good fit among pre-defined options",
+                        "type": "object",
+                        "properties": {
+                            "name": { "type": "string" },
+                            "confidence": { "$ref": "#/$defs/confidence" }
+                        },
+                        "required": ["name", "confidence"],
+                        "additionalProperties": false
+                    }
+                }
+            },
+            "required": ["standard"],
+            "additionalProperties": false
+        },
+        "industry": {
+            "description": "An object with information about opportunity industry",
+            "type": "object",
+            "properties": {
+                "standard": {
+                    "description": "One of pre-defined opportunity industries",
+                    "type": "object",
+                    "properties": {
+                        "name": {
+                            "type": "string",
+                            "enum": [
+                                "IT",
+                                "Hotel business",
+                                "Medicine",
+                                "Industrial design"
+                            ]
+                        },
+                        "confidence": { "$ref": "#/$defs/confidence" }
+                    },
+                    "required": ["name", "confidence"],
+                    "additionalProperties": false
+                },
+                "custom": {
+                    "description": "Custom opportunity industry, needed only if there is no good fit among pre-defined options",
+                    "type": "object",
+                    "properties": {
+                        "name": { "type": "string" },
+                        "confidence": { "$ref": "#/$defs/confidence" }
+                    },
+                    "required": ["name", "confidence"],
+                    "additionalProperties": false
+                }
+            },
+            "required": ["standard"],
+            "additionalProperties": false
+        },
+        "branch_tags": {
+            "description": "An object with information about opportunity industry branch",
+            "type": "object",
+            "properties": {
+                "standard": {
+                    "description": "List of standard opportuntiy branch tags, only tags that are relevant to opportunity should appear in the list",
+                    "type": "array",
+                    "items": {
+                        "description": "One of pre-defined opportunity branch tags",
+                        "type": "object",
+                        "properties": {
+                            "name": {
+                                "type": "string",
+                                "enum": [
+                                    "Backend",
+                                    "Frontend",
+                                    "User interface",
+                                    "User experience"
+                                ]
+                            },
+                            "confidence": { "$ref": "#/$defs/confidence" }
+                        },
+                        "required": ["name", "confidence"],
+                        "additionalProperties": false
+                    }
+                },
+                "custom": {
+                    "description": "List of custom opportunity branch tags, only tags that are relevant to opportunity should appear in the list",
+                    "type": "array",
+                    "items": {
+                        "description": "One of custom opportunity branch tags, needed only if there is not good fit among pre-defined options",
+                        "type": "object",
+                        "properties": {
+                            "name": { "type": "string" },
+                            "confidence": { "$ref": "#/$defs/confidence" }
+                        },
+                        "required": ["name", "confidence"],
+                        "additionalProperties": false
+                    }
+                }
+            },
+            "required": ["standard"],
+            "additionalProperties": false
+        },
+        "additional_tags": {
+            "description": "List of additional opportunity tags, only tags that are relevant to opportunity should appear in the list",
+            "type": "array",
+            "items": {
+                "description": "One of custom opportunity tags, needed only if does not fit into any pre-defined category",
+                "type": "object",
+                "properties": {
+                    "name": { "type": "string" },
+                    "confidence": { "$ref": "#/$defs/confidence" }
+                },
+                "required": ["name", "confidence"],
+                "additionalProperties": false
+            }
+        }
+    },
+    "required": [
+        "category",
+        "format_tags",
+        "industry",
+        "branch_tags",
+        "additional_tags"
+    ],
+    "additionalProperties": false,
+    "$defs": {
+        "confidence": {
+            "description": "Probability of tag being actually relevant to content, must be a number in range (0, 1]",
+            "type": "number",
+            "exclusiveMinimum": 0.0,
+            "maximum": 1.0
+        }
+    }
+}

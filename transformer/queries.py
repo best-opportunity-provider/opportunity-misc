@@ -12,13 +12,13 @@ def get_schema_file(filename: str):
 
 
 SCHEMAS = {
-    'tags': get_schema_file('tags.schema.json').read(),
+    'tags': get_schema_file('categorized-tags.schema.json').read(),
 }
 
 QUERY_MESSAGES = {
     'tags.system': (
-        'You will be provided with HTML page, and your task is to parse '
-        f'it according to this JSON schema: {SCHEMAS["tags"]}'
+        'You will be provided with HTML page of an opportunity, and your task is to parse '
+        f'it according to this JSON schema: \n{SCHEMAS["tags"]}\nMake sure that you respond in English'
     ),
 }
 
@@ -31,7 +31,7 @@ async def query_opportunity_tags(client: AsyncOpenAI, opportunity_link: str, opp
             {'role': 'system', 'content': QUERY_MESSAGES['tags.system']},
             {'role': 'user', 'content': opportunity_page},
         ],
-        temperature=0.2,
+        temperature=0.3,
         # top_p=0.4,
         stream=False,
         extra_body={'nvext': {'guided_json': SCHEMAS['tags']}},

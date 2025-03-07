@@ -37,8 +37,10 @@
                             "Internship",
                             "Full-time",
                             "Part-time",
-                            "User interfaces & experience",
-                            "Design"
+                            "Product design",
+                            "User interface",
+                            "User experience",
+                            "Office"
                         ]
                     },
                     "confidence": { "$ref": "#/$defs/confidence" }

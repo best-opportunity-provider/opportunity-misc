@@ -1,0 +1,30 @@
+{
+    "opportunity": "https://yandex.ru/jobs/vacancies/stazhyor-v-komandu-promishlennogo-dizayna-umnih-ustroystv-s-alisoy-30267",
+    "output": {
+        "category": { "name": "Internship", "confidence": 0.9 },
+        "format_tags": {
+            "standard": [
+                { "name": "Part-time", "confidence": 0.8 },
+                { "name": "In office", "confidence": 0.7 }
+            ],
+            "custom": [{ "name": "Гибридный", "confidence": 0.6 }]
+        },
+        "industry": {
+            "standard": { "name": "IT", "confidence": 0.9 },
+            "custom": { "name": "Промышленный дизайн", "confidence": 0.8 }
+        },
+        "branch_tags": {
+            "standard": [
+                { "name": "User interface", "confidence": 0.7 },
+                { "name": "User experience", "confidence": 0.6 }
+            ],
+            "custom": [{ "name": "Продуктовый дизайн", "confidence": 0.5 }]
+        },
+        "additional_tags": [
+            { "name": "Умные устройства", "confidence": 0.8 },
+            { "name": "Алиса", "confidence": 0.7 }
+        ]
+    },
+    "comments": "Made query using new schema, that splits tags into categories. Output is pretty ok, but mix of russian and english is a bit awkward.",
+    "model": "meta/llama-3.3-70b-instruct"
+}
