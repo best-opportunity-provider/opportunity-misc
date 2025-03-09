@@ -1,0 +1,167 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "title": "Opportunity submit form fields",
+    "type": "object",
+    "properties": {
+        "fields": {
+            "type": ["object", "null"],
+            "additionalProperties": {
+                "description": "Submit form field object",
+                "type": "object",
+                "properties": {
+                    "label": {
+                        "description": "Human readable name of the field",
+                        "type": "string"
+                    },
+                    "is_required": {
+                        "description": "Flag that indicates whether the field must be filled in",
+                        "type": "boolean"
+                    },
+                    "parameters": {
+                        "description": "Object with parameters of the specific field",
+                        "anyOf": [
+                            { "$ref": "#/$defs/string_field" },
+                            { "$ref": "#/$defs/regex_field" },
+                            { "$ref": "#/$defs/email_field" },
+                            { "$ref": "#/$defs/phone_number_field" },
+                            { "$ref": "#/$defs/number_field" },
+                            { "$ref": "#/$defs/choice_field" },
+                            { "$ref": "#/$defs/file_field" },
+                            { "$ref": "#/$defs/date_field" },
+                            { "$ref": "#/$defs/checkbox_field" }
+                        ]
+                    },
+                    "confidence": { "$ref": "#/$defs/confidence" }
+                },
+                "required": ["label", "is_required", "parameters", "confidence"]
+            }
+        },
+        "confidence": { "$ref": "#/$defs/confidence" }
+    },
+    "$defs": {
+        "confidence": {
+            "description": "Number in range (0, 1], that tells the probability of info being actually relevant to content",
+            "type": "number",
+            "exclusiveMinimum": 0.0,
+            "maximum": 1.0
+        },
+        "string_field": {
+            "description": "Schema with parameters for `string` field",
+            "type": "object",
+            "properties": {
+                "type": { "const": "string" },
+                "max_length": {
+                    "description": "Maximim length of the input string",
+                    "type": ["integer", "null"],
+                    "exclusiveMinimum": 0
+                }
+            },
+            "required": ["type", "max_length"]
+        },
+        "regex_field": {
+            "description": "Schema with parameters for `regex` field",
+            "type": "object",
+            "properties": {
+                "type": { "const": "regex" },
+                "max_length": {
+                    "description": "Maximum length of the input string",
+                    "type": ["integer", "null"],
+                    "exclusiveMinimum": 0
+                },
+                "regex": {
+                    "description": "Regular expression, that field input must statisfy",
+                    "type": "string"
+                }
+            },
+            "required": ["type", "max_length", "regex"]
+        },
+        "email_field": {
+            "description": "Schema with parameters for `email` field",
+            "type": "object",
+            "properties": {
+                "type": { "const": "email" },
+                "max_length": {
+                    "description": "Maximum length of the input string",
+                    "type": ["integer", "null"],
+                    "exclusiveMinimum": 0
+                }
+            },
+            "required": ["type", "max_length"]
+        },
+        "phone_number_field": {
+            "description": "Schema with parameters for `phone_number` field",
+            "type": "object",
+            "properties": {
+                "type": { "const": "phone_number" },
+                "countries_whitelist": {
+                    "description": "List of countries, which phone numbers are allowed. If all countries are allowed shouldn't be present",
+                    "type": ["array", "null"],
+                    "items": { "type": "string" }
+                }
+            },
+            "required": ["type", "countries_whitelist"]
+        },
+        "number_field": {
+            "description": "Schema with parameters for `number` field",
+            "type": "object",
+            "properties": {
+                "type": { "const": "number" },
+                "min": {
+                    "description": "Minimum value of the input number",
+                    "type": ["number", "null"]
+                },
+                "max": {
+                    "description": "Maximum value of the input number",
+                    "type": ["number", "null"]
+                }
+            },
+            "required": ["type", "min", "max"]
+        },
+        "choice_field": {
+            "description": "Schema with parameters for `choice` field",
+            "type": "object",
+            "properties": {
+                "type": { "const": "choice" },
+                "choices": {
+                    "description": "List of items to choose from",
+                    "type": "array",
+                    "items": { "type": "string" }
+                }
+            },
+            "required": ["type", "choices"]
+        },
+        "file_field": {
+            "description": "Schema with parameters for `file` field",
+            "type": "object",
+            "properties": {
+                "type": { "const": "file" },
+                "max_size_bytes": {
+                    "description": "Maximum file size in bytes",
+                    "type": ["integer", "null"],
+                    "exclusiveMinimum": 0
+                }
+            },
+            "required": ["type", "max_size_bytes"]
+        },
+        "date_field": {
+            "description": "Schema with parameters for `date` field",
+            "type": "object",
+            "properties": {
+                "type": { "const": "date" }
+            },
+            "required": ["type"]
+        },
+        "checkbox_field": {
+            "description": "Schema with parameters for `checkbox` field",
+            "type": "object",
+            "properties": {
+                "type": { "const": "checkbox" },
+                "checked_by_default": {
+                    "description": "Flag that indicates whether checkbox must be checked by default",
+                    "type": ["boolean", "null"]
+                }
+            },
+            "required": ["type", "checked_by_default"]
+        }
+    }
+}

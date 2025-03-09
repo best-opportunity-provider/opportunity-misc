@@ -1,0 +1,27 @@
+{
+    "opportunity": "https://yandex.ru/jobs/vacancies/stazhyor-v-komandu-promishlennogo-dizayna-umnih-ustroystv-s-alisoy-30267",
+    "output": {
+        "category": { "name": "Internship", "relevance": 1 },
+        "format_tags": {
+            "standard": [
+                { "name": "Part-time", "relevance": 1 },
+                { "name": "In office", "relevance": 1 }
+            ],
+            "custom": []
+        },
+        "industry": {
+            "standard": [{ "name": "Industrial design", "relevance": 1 }],
+            "custom": []
+        },
+        "branch_tags": {
+            "standard": [{ "name": "User experience", "relevance": 1 }],
+            "custom": []
+        },
+        "additional_tags": [
+            { "name": "Design", "relevance": 1 },
+            { "name": "Technology", "relevance": 1 }
+        ]
+    },
+    "comments": "Changes to schema. Replaced `confidence` with `relevance`. Turned `industry` properties into arrays to increase amount of choices.",
+    "model": "meta/llama-3.3-70b-instruct"
+}

@@ -1,0 +1,30 @@
+{
+    "opportunity": "https://yandex.ru/jobs/vacancies/stazhyor-v-komandu-promishlennogo-dizayna-umnih-ustroystv-s-alisoy-30267",
+    "output": {
+        "category": { "name": "Internship", "confidence": 0.9 },
+        "format_tags": {
+            "standard": [
+                { "name": "Part-time", "confidence": 0.8 },
+                { "name": "In office", "confidence": 0.7 }
+            ],
+            "custom": []
+        },
+        "industry": {
+            "standard": [{ "name": "IT", "confidence": 0.9 }],
+            "custom": []
+        },
+        "branch_tags": {
+            "standard": [
+                { "name": "User interface", "confidence": 0.8 },
+                { "name": "User experience", "confidence": 0.7 }
+            ],
+            "custom": []
+        },
+        "additional_tags": [
+            { "name": "Industrial design", "confidence": 0.9 },
+            { "name": "Smart devices", "confidence": 0.8 }
+        ]
+    },
+    "comments": "Removed `relevance` from schema. Result is pretty good, but it still can't choose `Industrial design` as `industry`.",
+    "model": "meta/llama-3.3-70b-instruct"
+}

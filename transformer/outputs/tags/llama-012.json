@@ -1,0 +1,27 @@
+{
+    "opportunity": "https://yandex.ru/jobs/vacancies/stazhyor-v-komandu-promishlennogo-dizayna-umnih-ustroystv-s-alisoy-30267",
+    "output": {
+        "category": { "name": "Internship", "confidence": 0.9 },
+        "format_tags": {
+            "standard": [
+                { "name": "Part-time", "confidence": 0.8 },
+                { "name": "Hybrid", "confidence": 0.7 }
+            ],
+            "custom": []
+        },
+        "industry": {
+            "standard": { "name": "Industrial design", "confidence": 0.9 },
+            "custom": { "name": "Smart devices", "confidence": 0.8 }
+        },
+        "branch_tags": {
+            "standard": [{ "name": "User experience", "confidence": 0.7 }],
+            "custom": [{ "name": "Smart home devices", "confidence": 0.6 }]
+        },
+        "additional_tags": [
+            { "name": "Design", "confidence": 0.8 },
+            { "name": "Innovation", "confidence": 0.7 }
+        ]
+    },
+    "comments": "Lowered temperature from `0.3` to `0.2` again. Also modified query a bit to prevent hallucinations.",
+    "model": "meta/llama-3.3-70b-instruct"
+}
