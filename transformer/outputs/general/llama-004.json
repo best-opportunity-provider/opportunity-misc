@@ -1,0 +1,18 @@
+{
+    "opportunity": "https://career.habr.com/vacancies/1000155592",
+    "output": {
+        "name": {
+            "name": "Intern in system analysis department",
+            "confidence": 0.8
+        },
+        "provider": {
+            "name": "Bastion",
+            "confidence": 0.9
+        },
+        "short_description": {
+            "description": "Internship in system analysis department with opportunities for professional growth and development",
+            "confidence": 0.7
+        }
+    },
+    "model": "meta/llama-3.3-70b-instruct"
+}

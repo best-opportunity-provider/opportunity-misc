@@ -1,0 +1,18 @@
+{
+    "opportunity": "https://ru.studyqa.com/internships/view/cote-d-azur-hotel-internship",
+    "output": {
+        "name": {
+            "name": "Hotel Internship on the Cote d'Azur for students and graduates",
+            "confidence": 0.9
+        },
+        "provider": {
+            "name": "StudyQA",
+            "confidence": 0.8
+        },
+        "short_description": {
+            "description": "Hotel internship on the Cote d'Azur for students and graduates, with a duration of 2-3 months and a salary of $617/month.",
+            "confidence": 0.7
+        }
+    },
+    "model": "meta/llama-3.3-70b-instruct"
+}

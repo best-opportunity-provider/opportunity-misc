@@ -1,0 +1,19 @@
+{
+    "opportunity": "https://yandex.ru/jobs/vacancies/stazhyor-v-komandu-promishlennogo-dizayna-umnih-ustroystv-s-alisoy-30267",
+    "output": {
+        "title": {
+            "name": "Intern in the team of industrial design of Smart devices with Alisa",
+            "confidence": 0.9
+        },
+        "provider": {
+            "name": "Yandex",
+            "confidence": 0.9
+        },
+        "short_description": {
+            "description": "We are looking for talented interns who want to develop their skills in industrial design, work with real devices and participate in the creation of the future.",
+            "confidence": 0.8
+        }
+    },
+    "comments": "Pretty good result.",
+    "model": "meta/llama-3.3-70b-instruct"
+}

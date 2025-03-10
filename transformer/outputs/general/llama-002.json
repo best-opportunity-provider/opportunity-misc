@@ -1,0 +1,18 @@
+{
+    "opportunity": "https://students.superjob.ru/stazhirovki/47102401/",
+    "output": {
+        "title": {
+            "name": "Internship engineer-designer-schematic technician in the rationalization and modernization department",
+            "confidence": 0.8
+        },
+        "provider": {
+            "name": "Zavod Radiopribor",
+            "confidence": 0.9
+        },
+        "short_description": {
+            "description": "We are looking for a candidate from St. Petersburg to work as an engineer-designer-schematic technician in the rationalization and modernization department. The candidate should have a higher radio technical education and knowledge of analog and digital circuitry.",
+            "confidence": 0.7
+        }
+    },
+    "model": "meta/llama-3.3-70b-instruct"
+}

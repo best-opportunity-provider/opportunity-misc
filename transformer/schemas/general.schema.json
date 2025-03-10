@@ -1,0 +1,76 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "title": "General opportunity information",
+    "description": "Object with general information (e.g. title, provider) about opportunity",
+    "type": "object",
+    "properties": {
+        "name": {
+            "description": "Object with name of the opportunity",
+            "type": "object",
+            "properties": {
+                "name": {
+                    "description": "Name of the opportunity translated to English",
+                    "type": "string"
+                },
+                "confidence": {
+                    "$ref": "#/$defs/confidence"
+                }
+            },
+            "required": [
+                "name",
+                "confidence"
+            ],
+            "additionalProperties": false
+        },
+        "provider": {
+            "description": "Object with name of the opportunity provider",
+            "type": "object",
+            "properties": {
+                "name": {
+                    "description": "Name of the opportunity provider translated to English",
+                    "type": "string"
+                },
+                "confidence": {
+                    "$ref": "#/$defs/confidence"
+                }
+            },
+            "required": [
+                "name",
+                "confidence"
+            ],
+            "additionalProperties": false
+        },
+        "short_description": {
+            "description": "Object with short description of the opportunity",
+            "type": "object",
+            "properties": {
+                "description": {
+                    "description": "Short description of the opportunity translated to English",
+                    "type": "string"
+                },
+                "confidence": {
+                    "$ref": "#/$defs/confidence"
+                }
+            },
+            "required": [
+                "description",
+                "confidence"
+            ],
+            "additionalProperties": false
+        }
+    },
+    "required": [
+        "name",
+        "provider",
+        "short_description"
+    ],
+    "additionalProperties": false,
+    "$defs": {
+        "confidence": {
+            "description": "Number in range (0, 1], that tells the probability of info being actually relevant to content",
+            "type": "number",
+            "exclusiveMinimum": 0.0,
+            "maximum": 1.0
+        }
+    }
+}

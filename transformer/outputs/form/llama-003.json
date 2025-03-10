@@ -1,0 +1,101 @@
+{
+    "opportunity": "https://ru.studyqa.com/internships/view/cote-d-azur-hotel-internship",
+    "output": {
+        "fields": {
+            "first_name": {
+                "label": "First name (in Latin)",
+                "is_required": true,
+                "parameters": {
+                    "type": "string",
+                    "max_length": null
+                },
+                "confidence": 1.0
+            },
+            "last_name": {
+                "label": "Last name (in Latin)",
+                "is_required": true,
+                "parameters": {
+                    "type": "string",
+                    "max_length": null
+                },
+                "confidence": 1.0
+            },
+            "email": {
+                "label": "Email",
+                "is_required": true,
+                "parameters": {
+                    "type": "email",
+                    "max_length": null
+                },
+                "confidence": 1.0
+            },
+            "phone": {
+                "label": "Phone",
+                "is_required": true,
+                "parameters": {
+                    "type": "phone_number",
+                    "countries_whitelist": null
+                },
+                "confidence": 1.0
+            },
+            "country": {
+                "label": "Country",
+                "is_required": true,
+                "parameters": {
+                    "type": "country",
+                    "countries_whitelist": null
+                },
+                "confidence": 1.0
+            },
+            "city": {
+                "label": "City",
+                "is_required": true,
+                "parameters": {
+                    "type": "string",
+                    "max_length": null
+                },
+                "confidence": 1.0
+            },
+            "age": {
+                "label": "Age",
+                "is_required": true,
+                "parameters": {
+                    "type": "number",
+                    "min": 10,
+                    "max": 90
+                },
+                "confidence": 1.0
+            },
+            "gender": {
+                "label": "Gender",
+                "is_required": true,
+                "parameters": {
+                    "type": "choice",
+                    "choices": {
+                        "0": "Female",
+                        "1": "Male"
+                    }
+                },
+                "confidence": 1.0
+            },
+            "lang_level": {
+                "label": "English level",
+                "is_required": true,
+                "parameters": {
+                    "type": "choice",
+                    "choices": {
+                        "Beginner": "Beginner",
+                        "Intermediate": "Intermediate",
+                        "Upper-Intermediate": "Upper-Intermediate",
+                        "Advanced": "Advanced",
+                        "Proficiency": "Proficiency"
+                    }
+                },
+                "confidence": 1.0
+            }
+        },
+        "confidence": 1.0
+    },
+    "comments": "Perfect output.",
+    "model": "meta/llama-3.3-70b-instruct"
+}

@@ -1,0 +1,75 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "title": "Opportunity selection stages",
+    "description": "Array with opportunity selection stages",
+    "type": "array",
+    "items": {
+        "description": "Selection stage for the opportunity",
+        "type": "object",
+        "properties": {
+            "name": {
+                "description": "Name of the selection stage translated to English",
+                "type": "string"
+            },
+            "timespan": {
+                "description": "Object with timespan of the selection stage",
+                "type": "object",
+                "properties": {
+                    "text": {
+                        "description": "Information regarding selection stage time and duration translated to English",
+                        "type": "string"
+                    },
+                    "confidence": {
+                        "$ref": "#/$defs/confidence"
+                    }
+                },
+                "required": [
+                    "text",
+                    "confidence"
+                ],
+                "additionalProperties": false
+            },
+            "description": {
+                "description": "Description of the selection stage translated to English",
+                "type": "string"
+            },
+            "tasks": {
+                "description": "List of selection stage tasks",
+                "type": "array",
+                "items": {
+                    "description": "Selection stage task object",
+                    "type": "object",
+                    "properties": {
+                        "name": {
+                            "description": "Selection stage task name translated to English",
+                            "type": "string"
+                        },
+                        "confidence": {
+                            "$ref": "#/$defs/confidence"
+                        }
+                    },
+                    "required": [
+                        "name",
+                        "confidence"
+                    ],
+                    "additionalProperties": false
+                }
+            }
+        },
+        "required": [
+            "name",
+            "timespan",
+            "description",
+            "tasks"
+        ],
+        "additionalProperties": false
+    },
+    "$defs": {
+        "confidence": {
+            "description": "Number in range (0, 1], that tells the probability of info being actually relevant to content",
+            "type": "number",
+            "exclusiveMinimum": 0.0,
+            "maximum": 1.0
+        }
+    }
+}

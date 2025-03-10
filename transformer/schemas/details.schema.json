@@ -1,0 +1,133 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "title": "Opportunity details",
+    "description": "Object with opportunity details (e.g. requirements, advantages)",
+    "type": "object",
+    "properties": {
+        "requirements": {
+            "description": "List of requirements for the applicant",
+            "type": "array",
+            "items": {
+                "description": "Opportunity applicant requirement object",
+                "type": "object",
+                "properties": {
+                    "name": {
+                        "description": "Name of the requirement translated to English",
+                        "type": "string"
+                    },
+                    "confidence": {
+                        "$ref": "#/$defs/confidence"
+                    }
+                },
+                "required": [
+                    "name",
+                    "confidence"
+                ],
+                "additionalProperties": false
+            }
+        },
+        "benefits": {
+            "description": "List of opportunity benefits",
+            "type": "array",
+            "items": {
+                "description": "Opportunity advantage object",
+                "type": "object",
+                "properties": {
+                    "name": {
+                        "description": "Name of the benefit translated to English",
+                        "type": "string"
+                    },
+                    "confidence": {
+                        "$ref": "#/$defs/confidence"
+                    }
+                },
+                "required": [
+                    "name",
+                    "confidence"
+                ],
+                "additionalProperties": false
+            }
+        },
+        "target_audiences": {
+            "description": "List of opportunity target audiences",
+            "type": "array",
+            "items": {
+                "description": "Target audience object",
+                "type": "object",
+                "properties": {
+                    "name": {
+                        "description": "Name of the target audience translated to English",
+                        "type": "string"
+                    },
+                    "confidence": {
+                        "$ref": "#/$defs/confidence"
+                    }
+                },
+                "required": [
+                    "name",
+                    "confidence"
+                ],
+                "additionalProperties": false
+            }
+        },
+        "salary": {
+            "description": "Object with information about opportunity salary",
+            "type": [
+                "object",
+                "null"
+            ],
+            "properties": {
+                "text": {
+                    "description": "Information about salary translated to English",
+                    "type": "string"
+                },
+                "confidence": {
+                    "$ref": "#/$defs/confidence"
+                }
+            },
+            "required": [
+                "text",
+                "confidence"
+            ],
+            "additionalProperties": false
+        },
+        "expenses": {
+            "description": "List of possible opportunity expenses",
+            "type": "array",
+            "items": {
+                "description": "Expense object",
+                "type": "object",
+                "properties": {
+                    "text": {
+                        "description": "Expense name translated to English",
+                        "type": "string"
+                    },
+                    "confidence": {
+                        "$ref": "#/$defs/confidence"
+                    }
+                },
+                "required": [
+                    "text",
+                    "confidence"
+                ],
+                "additionalProperties": false
+            }
+        }
+    },
+    "required": [
+        "requirements",
+        "benefits",
+        "target_audiences",
+        "salary",
+        "expenses"
+    ],
+    "additionalProperties": false,
+    "$defs": {
+        "confidence": {
+            "description": "Number in range (0, 1], that tells the probability of info being actually relevant to content",
+            "type": "number",
+            "exclusiveMinimum": 0.0,
+            "maximum": 1.0
+        }
+    }
+}

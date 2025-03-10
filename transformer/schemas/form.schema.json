@@ -4,13 +4,13 @@
     "type": "object",
     "properties": {
         "fields": {
-            "type": ["object", "null"],
+            "type": "object",
             "additionalProperties": {
                 "description": "Submit form field object",
                 "type": "object",
                 "properties": {
                     "label": {
-                        "description": "Human readable name of the field",
+                        "description": "Human readable name of the field translated to English",
                         "type": "string"
                     },
                     "is_required": {
@@ -20,24 +20,59 @@
                     "parameters": {
                         "description": "Object with parameters of the specific field",
                         "anyOf": [
-                            { "$ref": "#/$defs/string_field" },
-                            { "$ref": "#/$defs/regex_field" },
-                            { "$ref": "#/$defs/email_field" },
-                            { "$ref": "#/$defs/phone_number_field" },
-                            { "$ref": "#/$defs/number_field" },
-                            { "$ref": "#/$defs/choice_field" },
-                            { "$ref": "#/$defs/file_field" },
-                            { "$ref": "#/$defs/date_field" },
-                            { "$ref": "#/$defs/checkbox_field" }
+                            {
+                                "$ref": "#/$defs/string_field"
+                            },
+                            {
+                                "$ref": "#/$defs/regex_field"
+                            },
+                            {
+                                "$ref": "#/$defs/email_field"
+                            },
+                            {
+                                "$ref": "#/$defs/phone_number_field"
+                            },
+                            {
+                                "$ref": "#/$defs/number_field"
+                            },
+                            {
+                                "$ref": "#/$defs/choice_field"
+                            },
+                            {
+                                "$ref": "#/$defs/country_field"
+                            },
+                            {
+                                "$ref": "#/$defs/file_field"
+                            },
+                            {
+                                "$ref": "#/$defs/date_field"
+                            },
+                            {
+                                "$ref": "#/$defs/checkbox_field"
+                            }
                         ]
                     },
-                    "confidence": { "$ref": "#/$defs/confidence" }
+                    "confidence": {
+                        "$ref": "#/$defs/confidence"
+                    }
                 },
-                "required": ["label", "is_required", "parameters", "confidence"]
+                "required": [
+                    "label",
+                    "is_required",
+                    "parameters",
+                    "confidence"
+                ]
             }
         },
-        "confidence": { "$ref": "#/$defs/confidence" }
+        "confidence": {
+            "$ref": "#/$defs/confidence"
+        }
     },
+    "required": [
+        "fields",
+        "confidence"
+    ],
+    "additionalProperties": false,
     "$defs": {
         "confidence": {
             "description": "Number in range (0, 1], that tells the probability of info being actually relevant to content",
@@ -49,23 +84,36 @@
             "description": "Schema with parameters for `string` field",
             "type": "object",
             "properties": {
-                "type": { "const": "string" },
+                "type": {
+                    "const": "string"
+                },
                 "max_length": {
                     "description": "Maximim length of the input string",
-                    "type": ["integer", "null"],
+                    "type": [
+                        "integer",
+                        "null"
+                    ],
                     "exclusiveMinimum": 0
                 }
             },
-            "required": ["type", "max_length"]
+            "required": [
+                "type",
+                "max_length"
+            ]
         },
         "regex_field": {
             "description": "Schema with parameters for `regex` field",
             "type": "object",
             "properties": {
-                "type": { "const": "regex" },
+                "type": {
+                    "const": "regex"
+                },
                 "max_length": {
                     "description": "Maximum length of the input string",
-                    "type": ["integer", "null"],
+                    "type": [
+                        "integer",
+                        "null"
+                    ],
                     "exclusiveMinimum": 0
                 },
                 "regex": {
@@ -73,95 +121,181 @@
                     "type": "string"
                 }
             },
-            "required": ["type", "max_length", "regex"]
+            "required": [
+                "type",
+                "max_length",
+                "regex"
+            ]
         },
         "email_field": {
             "description": "Schema with parameters for `email` field",
             "type": "object",
             "properties": {
-                "type": { "const": "email" },
+                "type": {
+                    "const": "email"
+                },
                 "max_length": {
                     "description": "Maximum length of the input string",
-                    "type": ["integer", "null"],
+                    "type": [
+                        "integer",
+                        "null"
+                    ],
                     "exclusiveMinimum": 0
                 }
             },
-            "required": ["type", "max_length"]
+            "required": [
+                "type",
+                "max_length"
+            ]
         },
         "phone_number_field": {
             "description": "Schema with parameters for `phone_number` field",
             "type": "object",
             "properties": {
-                "type": { "const": "phone_number" },
+                "type": {
+                    "const": "phone_number"
+                },
                 "countries_whitelist": {
                     "description": "List of countries, which phone numbers are allowed. If all countries are allowed shouldn't be present",
-                    "type": ["array", "null"],
-                    "items": { "type": "string" }
+                    "type": [
+                        "array",
+                        "null"
+                    ],
+                    "items": {
+                        "type": "string"
+                    }
                 }
             },
-            "required": ["type", "countries_whitelist"]
+            "required": [
+                "type",
+                "countries_whitelist"
+            ]
         },
         "number_field": {
             "description": "Schema with parameters for `number` field",
             "type": "object",
             "properties": {
-                "type": { "const": "number" },
+                "type": {
+                    "const": "number"
+                },
                 "min": {
                     "description": "Minimum value of the input number",
-                    "type": ["number", "null"]
+                    "type": [
+                        "number",
+                        "null"
+                    ]
                 },
                 "max": {
                     "description": "Maximum value of the input number",
-                    "type": ["number", "null"]
+                    "type": [
+                        "number",
+                        "null"
+                    ]
                 }
             },
-            "required": ["type", "min", "max"]
+            "required": [
+                "type",
+                "min",
+                "max"
+            ]
         },
         "choice_field": {
             "description": "Schema with parameters for `choice` field",
             "type": "object",
             "properties": {
-                "type": { "const": "choice" },
+                "type": {
+                    "const": "choice"
+                },
                 "choices": {
-                    "description": "List of items to choose from",
-                    "type": "array",
-                    "items": { "type": "string" }
+                    "description": "Object with items to choose from",
+                    "type": "object",
+                    "additionalProperties": {
+                        "description": "Human readable name of a choice translated to English",
+                        "type": "string"
+                    }
                 }
             },
-            "required": ["type", "choices"]
+            "required": [
+                "type",
+                "choices"
+            ]
+        },
+        "country_field": {
+            "description": "Schema with parameters for `country` field",
+            "type": "object",
+            "properties": {
+                "type": {
+                    "const": "country"
+                },
+                "countries_whitelist": {
+                    "description": "List of countries, that are allowed. If all countries are allowed shouldn't be present",
+                    "type": [
+                        "array",
+                        "null"
+                    ],
+                    "items": {
+                        "description": "Name of an allowed country translated to English",
+                        "type": "string"
+                    }
+                }
+            },
+            "required": [
+                "type",
+                "countries_whitelist"
+            ]
         },
         "file_field": {
             "description": "Schema with parameters for `file` field",
             "type": "object",
             "properties": {
-                "type": { "const": "file" },
+                "type": {
+                    "const": "file"
+                },
                 "max_size_bytes": {
                     "description": "Maximum file size in bytes",
-                    "type": ["integer", "null"],
+                    "type": [
+                        "integer",
+                        "null"
+                    ],
                     "exclusiveMinimum": 0
                 }
             },
-            "required": ["type", "max_size_bytes"]
+            "required": [
+                "type",
+                "max_size_bytes"
+            ]
         },
         "date_field": {
             "description": "Schema with parameters for `date` field",
             "type": "object",
             "properties": {
-                "type": { "const": "date" }
+                "type": {
+                    "const": "date"
+                }
             },
-            "required": ["type"]
+            "required": [
+                "type"
+            ]
         },
         "checkbox_field": {
             "description": "Schema with parameters for `checkbox` field",
             "type": "object",
             "properties": {
-                "type": { "const": "checkbox" },
+                "type": {
+                    "const": "checkbox"
+                },
                 "checked_by_default": {
                     "description": "Flag that indicates whether checkbox must be checked by default",
-                    "type": ["boolean", "null"]
+                    "type": [
+                        "boolean",
+                        "null"
+                    ]
                 }
             },
-            "required": ["type", "checked_by_default"]
+            "required": [
+                "type",
+                "checked_by_default"
+            ]
         }
     }
 }

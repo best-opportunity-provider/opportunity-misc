@@ -1,0 +1,74 @@
+{
+    "opportunity": "https://yandex.ru/jobs/vacancies/stazhyor-v-komandu-promishlennogo-dizayna-umnih-ustroystv-s-alisoy-30267",
+    "output": {
+        "requirements": [
+            {
+                "name": "Currently studying on the last courses of a bachelor's degree in Industrial Design",
+                "confidence": 0.8
+            },
+            {
+                "name": "Desire to explore new forms, materials, and technologies",
+                "confidence": 0.7
+            },
+            {
+                "name": "Passion for industrial design and ability to show a portfolio with interesting works",
+                "confidence": 0.9
+            },
+            {
+                "name": "Willingness to work in the industry of smart devices and create products that will be used by millions of people",
+                "confidence": 0.8
+            }
+        ],
+        "benefits": [
+            {
+                "name": "Paid internship for six months",
+                "confidence": 0.9
+            },
+            {
+                "name": "Part-time work, office format",
+                "confidence": 0.8
+            },
+            {
+                "name": "Strong team to grow with",
+                "confidence": 0.7
+            },
+            {
+                "name": "Opportunity to influence the process and result",
+                "confidence": 0.8
+            },
+            {
+                "name": "Compensation for food expenses",
+                "confidence": 0.7
+            },
+            {
+                "name": "Gym access",
+                "confidence": 0.6
+            }
+        ],
+        "target_audiences": [
+            {
+                "name": "Students of Industrial Design",
+                "confidence": 0.9
+            },
+            {
+                "name": "Young designers",
+                "confidence": 0.8
+            },
+            {
+                "name": "People interested in smart devices and technology",
+                "confidence": 0.7
+            }
+        ],
+        "salary": {
+            "text": "Paid internship",
+            "confidence": 0.9
+        },
+        "expenses": [
+            {
+                "text": "Compensation for food expenses",
+                "confidence": 0.7
+            }
+        ]
+    },
+    "model": "meta/llama-3.3-70b-instruct"
+}
