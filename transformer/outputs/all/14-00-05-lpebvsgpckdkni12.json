@@ -1,0 +1,137 @@
+{
+    "opportunity_id": "https://yandex.ru/jobs/vacancies/stazhyor-v-komandu-promishlennogo-dizayna-umnih-ustroystv-s-alisoy-30267",
+    "output": {
+        "tags": {
+            "category": {
+                "name": "Internship",
+                "confidence": 0.9
+            },
+            "format_tags": {
+                "standard": [
+                    {
+                        "name": "Hybrid",
+                        "confidence": 0.8
+                    }
+                ],
+                "custom": []
+            },
+            "industry_tags": {
+                "standard": [
+                    {
+                        "name": "Industrial design",
+                        "confidence": 0.9
+                    }
+                ],
+                "custom": []
+            },
+            "branch_tags": {
+                "standard": [
+                    {
+                        "name": "User interface",
+                        "confidence": 0.7
+                    }
+                ],
+                "custom": []
+            },
+            "additional_tags": [
+                {
+                    "name": "Design",
+                    "nearest_category": "industry_tags",
+                    "confidence": 0.8
+                },
+                {
+                    "name": "Technology",
+                    "nearest_category": "industry_tags",
+                    "confidence": 0.6
+                }
+            ]
+        },
+        "form": {
+            "fields": {},
+            "confidence": 0.5
+        },
+        "general": {
+            "name": {
+                "name": "Intern in the team of industrial design of Smart devices with Alice",
+                "confidence": 0.9
+            },
+            "provider": {
+                "name": "Yandex",
+                "confidence": 0.9
+            },
+            "short_description": {
+                "description": "We are looking for talented interns who want to develop their skills in industrial design, work with real devices and participate in creating the future.",
+                "confidence": 0.8
+            }
+        },
+        "selection": [],
+        "details": {
+            "requirements": [
+                {
+                    "name": "Currently studying for a bachelor's degree in Industrial Design",
+                    "confidence": 0.9
+                },
+                {
+                    "name": "Desire to explore new forms, materials, and technologies",
+                    "confidence": 0.8
+                },
+                {
+                    "name": "Passion for industrial design and a portfolio of interesting works",
+                    "confidence": 0.8
+                },
+                {
+                    "name": "Willingness to work in the smart devices industry and create products used by millions of people",
+                    "confidence": 0.9
+                }
+            ],
+            "benefits": [
+                {
+                    "name": "Paid internship for six months",
+                    "confidence": 0.9
+                },
+                {
+                    "name": "Part-time work in an office setting",
+                    "confidence": 0.8
+                },
+                {
+                    "name": "Strong team to work with and opportunity for growth",
+                    "confidence": 0.8
+                },
+                {
+                    "name": "Influence on the process and results",
+                    "confidence": 0.7
+                },
+                {
+                    "name": "Compensation for food expenses",
+                    "confidence": 0.7
+                },
+                {
+                    "name": "Access to a gym",
+                    "confidence": 0.6
+                }
+            ],
+            "target_audiences": [
+                {
+                    "name": "Students of Industrial Design",
+                    "confidence": 0.9
+                },
+                {
+                    "name": "Young designers looking to gain experience",
+                    "confidence": 0.8
+                }
+            ],
+            "salary": {
+                "text": "Paid internship",
+                "confidence": 0.9
+            },
+            "expenses": [
+                {
+                    "text": "Food expenses compensation",
+                    "confidence": 0.7
+                }
+            ]
+        }
+    },
+    "model": "meta/llama-3.3-70b-instruct",
+    "timestamp": "2025-03-17 14:00:05.822929"
+}
