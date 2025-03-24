@@ -1,0 +1,1 @@
+{"additionalProperties": false, "properties": {"tags": {"anyOf": [{"items": {"type": "string"}, "type": "array"}, {"type": "null"}], "default": null, "title": "Tags"}}, "title": "OpportunityTagsInfo", "type": "object"}

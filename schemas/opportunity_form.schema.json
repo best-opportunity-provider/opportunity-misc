@@ -145,7 +145,7 @@
             ]
           }
         },
-        "required": ["name", "type", "required", "label", "parameters"]
+        "required": ["name", "type", "is_required", "label", "parameters"]
       }
     }
   }
