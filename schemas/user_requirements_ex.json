@@ -1,0 +1,24 @@
+{
+  "firstname": {
+    "type": "string"
+  },
+  "lastname": {
+    "type": "string"
+  },
+  "birthday": {
+    "type": "string"
+  },
+  "sex":  {
+    "description": "0 = man, 1 = woman",
+    "type": "number"
+  },
+  "email": {
+    "type": "string"
+    },
+    "phone": {
+      "type": "string"
+    },
+    "cv": {
+      "type": "file"
+    }
+}
